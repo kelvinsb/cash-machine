@@ -19,7 +19,8 @@
     "sucrase": "^3.20.1"
   },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "start": "nodemon --exec babel-node --presets es2015 src/main/server.js"
   },
   "dependencies": {
     "babel-cli": "^6.26.0",
