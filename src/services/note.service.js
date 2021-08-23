@@ -8,10 +8,6 @@ export class NoteService {
   _removeWithoutStock(amount) {
     if (this._noteEntity.isAmountGreaterThanStock(amount)) return null
 
-    const quantityToRemove = this._noteEntity.quantityWithdraw(amount)
-
-    this._removeStock(quantityToRemove)
-
     return {
       withdrawn: this._noteEntity.quantityWithdraw(amount),
       rest: this._noteEntity.restAmount(amount),
