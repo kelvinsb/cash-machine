@@ -4,14 +4,14 @@ import { validNotesWithStock } from '../../utils'
 
 const validate = (res, amountParam) => {
   if (!amountParam) {
-    return res.status(422).json({
+    return res.status(400).json({
       error: 'amount must be provided',
     })
   }
 
   const amount = Number.parseFloat(amountParam)
   if (Number.isNaN(amount)) {
-    return res.status(422).json({
+    return res.status(400).json({
       error: 'amount must be a number',
     })
   }
